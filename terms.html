@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - YumWhirl</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #6BBF59; /* Lime green */
+            --secondary: #3D9DB3; /* Cool blue */
+            --accent: #FF7E33; /* Vibrant orange */
+            --light: #F5F5F5;
+            --dark: #333333;
+            --rounded: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Terms Content */
+        .terms-header {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .terms-title {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .last-updated {
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .terms-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--rounded);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .terms-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .terms-point {
+            margin-bottom: 30px;
+        }
+        
+        .point-title {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px 10px;
+            }
+            
+            .terms-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Yum<span>Whirl</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="terms-header">
+            <h1 class="terms-title">Terms of Service</h1>
+            <p class="last-updated">Last Updated: June 15, 2023</p>
+        </div>
+        
+        <div class="terms-content">
+            <div class="terms-section">
+                <h2 class="section-title">1. Introduction</h2>
+                <p>Welcome to YumWhirl! These Terms of Service ("Terms") govern your access to and use of our website, services, and applications (collectively, the "Service"). By accessing or using our Service, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please do not use our Service. These Terms apply to all visitors, users, and others who wish to access or use our Service.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-title">2. Account Registration</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">2.1 Eligibility</h3>
+                    <p>To use certain features of our Service, you must register for an account. You represent that you are at least 13 years old and have the legal capacity to enter into these Terms. If you are under 18, you may only use our Service with consent from a parent or guardian. We reserve the right to refuse service, terminate accounts, or remove content at our sole discretion.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">2.2 Account Information</h3>
+                    <p>You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Notify us immediately of any unauthorized use of your account.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">2.3 Account Termination</h3>
+                    <p>We may suspend or terminate your account if you violate these Terms. You may terminate your account at any time by contacting us. Upon termination, your right to use the Service will immediately cease, but provisions regarding intellectual property, disclaimers, and limitations of liability will survive.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-title">3. User Responsibilities</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">3.1 Acceptable Use</h3>
+                    <p>You agree to use our Service only for lawful purposes and in accordance with these Terms. You must not use our Service: (a) in any way that violates applicable laws; (b) to exploit, harm, or attempt to exploit minors; (c) to transmit advertising or spam; (d) to impersonate others; or (e) to engage in any harmful or fraudulent activity.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">3.2 User Content</h3>
+                    <p>You retain ownership of any content you submit ("User Content"), but grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and display such content in connection with the Service. You represent that you have all rights necessary to grant this license and that your content complies with these Terms.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">3.3 Prohibited Content</h3>
+                    <p>You may not submit content that: (a) is unlawful, harmful, or fraudulent; (b) infringes intellectual property rights; (c) contains viruses or malware; (d) is sexually explicit or violent; (e) promotes illegal activities; or (f) violates others' privacy. We may remove any content that violates these standards without notice.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">3.4 Community Guidelines</h3>
+                    <p>When interacting with our community, you agree to: (a) be respectful of others; (b) not harass or bully others; (c) not post spam or advertisements; (d) not share false or misleading information; and (e) comply with all additional guidelines posted on our Service. Violations may result in account termination.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-title">4. Intellectual Property</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">4.1 Our Content</h3>
+                    <p>The Service and its original content, features, and functionality are owned by YumWhirl and are protected by international copyright, trademark, and other intellectual property laws. You may not modify, reproduce, distribute, or create derivative works of our content without express written permission from us.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">4.2 Your Content</h3>
+                    <p>You retain ownership of any content you submit to our Service, but grant us a license to use it as described in these Terms. You represent that you have all necessary rights to the content you submit and that it does not infringe any third-party rights.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">4.3 Copyright Complaints</h3>
+                    <p>We respect intellectual property rights and will respond to notices of alleged copyright infringement that comply with applicable law. If you believe your work has been copied in a way that constitutes infringement, please provide our Copyright Agent with a written notice containing specified information as outlined in our Copyright Policy.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">4.4 Trademarks</h3>
+                    <p>The YumWhirl name and logo, and all related names, logos, product and service names, designs, and slogans are trademarks of YumWhirl or its affiliates. You must not use such marks without our prior written permission. All other names, logos, and marks are the property of their respective owners.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-title">5. Purchases and Payments</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">5.1 Orders</h3>
+                    <p>All purchases through our Service are subject to product availability. We reserve the right to refuse or cancel any order for any reason, including limitations on quantities available, inaccuracies in product information, or suspicion of fraudulent activity. Prices are subject to change without notice.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">5.2 Payment</h3>
+                    <p>You agree to pay all charges for purchases made through your account. We accept various payment methods as indicated during checkout. You represent that you have the legal right to use any payment method you provide. We may use third-party payment processors and your payment may be subject to their terms.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">5.3 Subscriptions</h3>
+                    <p>Some services may be offered on a subscription basis. By subscribing, you authorize recurring payments until you cancel. Subscription fees are non-refundable except as required by law. You may cancel at any time, but cancellations won't take effect until the next billing cycle.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">5.4 Refunds</h3>
+                    <p>Refund policies vary by product and will be disclosed at the time of purchase. Generally, digital products are non-refundable unless defective. For physical goods, we accept returns within 30 days of delivery for unused items in original packaging. Shipping costs are non-refundable.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-title">6. Service Features</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">6.1 Recipe Content</h3>
+                    <p>Our Service provides recipes and cooking information for general informational purposes. We make no guarantees about the accuracy, completeness, or usefulness of this content. You are responsible for determining the suitability of recipes for your dietary needs and for proper food handling and preparation.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">6.2 Nutritional Information</h3>
+                    <p>Nutritional information provided on our Service is approximate and calculated using standard databases. Actual nutritional content may vary based on specific ingredients used and preparation methods. This information should not be used for medical purposes - consult a healthcare professional for dietary advice.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">6.3 Third-Party Links</h3>
+                    <p>Our Service may contain links to third-party websites or services not owned or controlled by YumWhirl. We are not responsible for the content or practices of these third parties. Your use of third-party services is at your own risk and subject to their terms and policies.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">6.4 Mobile Applications</h3>
+                    <p>If you access our Service through a mobile app, you may incur charges from your mobile provider for data usage. You are responsible for these charges. App stores may have additional terms governing your use of mobile applications downloaded through their platforms.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-title">7. Disclaimers and Limitations</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">7.1 Service Availability</h3>
+                    <p>We strive to maintain the availability of our Service but cannot guarantee it will always be uninterrupted or error-free. We may modify, suspend, or discontinue any aspect of the Service at any time without notice. We are not liable for any unavailability of the Service.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">7.2 No Medical Advice</h3>
+                    <p>The content on our Service is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions regarding medical conditions or dietary changes.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">7.3 Food Safety</h3>
+                    <p>You are solely responsible for safe food handling, preparation, and storage when using recipes from our Service. We are not liable for any foodborne illness, allergic reactions, or other health issues resulting from your use of our recipes or cooking instructions.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">7.4 Limitation of Liability</h3>
+                    <p>To the maximum extent permitted by law, YumWhirl shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the Service. Our total liability for any claims related to the Service shall not exceed the amount you paid us in the past 12 months.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-title">8. General Provisions</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">8.1 Changes to Terms</h3>
+                    <p>We may modify these Terms at any time. We will notify you of material changes through the Service or by email. Your continued use after changes constitutes acceptance of the new Terms. If you disagree with changes, you must stop using the Service.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">8.2 Governing Law</h3>
+                    <p>These Terms shall be governed by the laws of the State of California without regard to conflict of law principles. Any disputes shall be resolved in the state or federal courts located in San Francisco County, California, and you consent to personal jurisdiction in these courts.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">8.3 Entire Agreement</h3>
+                    <p>These Terms, together with our Privacy Policy and any other legal notices published by us on the Service, constitute the entire agreement between you and YumWhirl regarding the Service and supersede all prior agreements and understandings.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">8.4 Contact Information</h3>
+                    <p>For questions about these Terms, please contact us at legal@yumwhirl.com or at our physical address listed in the footer. We will make good faith efforts to resolve any concerns you have about our Service.</p>
+                </div>
+            </div>
+            
+            <!-- Additional sections with more points to reach 40 total -->
+            <div class="terms-section">
+                <h2 class="section-title">9. Additional Provisions</h2>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.1 Assignment</h3>
+                    <p>You may not assign or transfer these Terms or your rights under them without our prior written consent. We may assign these Terms without restriction in connection with a merger, acquisition, or sale of assets. Any attempted transfer in violation of this section is void.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.2 Waiver</h3>
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision is held invalid or unenforceable, the remaining provisions will remain in full effect. Any waiver must be in writing and signed by us.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.3 Force Majeure</h3>
+                    <p>We shall not be liable for any failure to perform our obligations due to events beyond our reasonable control, including acts of God, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, or shortages of materials.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.4 Severability</h3>
+                    <p>If any provision of these Terms is found to be invalid or unenforceable by a court of competent jurisdiction, that provision will be limited or eliminated to the minimum extent necessary so that these Terms otherwise remain in full force and effect.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.5 Headings</h3>
+                    <p>The section headings in these Terms are for convenience only and have no legal or contractual effect. The language in these Terms shall be interpreted as to its fair meaning and not strictly for or against any party.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.6 No Third-Party Beneficiaries</h3>
+                    <p>These Terms are solely for the benefit of the parties and do not create any third-party beneficiary rights. No person or entity not a party to these Terms will have any right to enforce any provision of these Terms.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.7 Electronic Communications</h3>
+                    <p>By using the Service, you consent to receiving electronic communications from us. These may include notices about your account and information concerning or related to the Service. You agree that any notices we send electronically will satisfy any legal communication requirements.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.8 Feedback</h3>
+                    <p>Any feedback, comments, or suggestions you provide regarding the Service is entirely voluntary. We may use such feedback without restriction or obligation to compensate you, and we are not required to keep it confidential.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.9 Survival</h3>
+                    <p>All provisions of these Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability. These obligations will remain in effect after termination of your use of the Service.</p>
+                </div>
+                
+                <div class="terms-point">
+                    <h3 class="point-title">9.10 Language</h3>
+                    <p>The original version of these Terms is written in English. We may provide translations for convenience only. In case of conflicts between the English version and any translation, the English version shall prevail.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Quick Meals</a></li>
+                        <li><a href="#">Meal Prep</a></li>
+                        <li><a href="#">Gym Recipes</a></li>
+                        <li><a href="#">Vegetarian</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Recipe Guidelines</a></li>
+                        <li><a href="#">Nutrition Philosophy</a></li>
+                        <li><a href="#">Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p>YumWhirl Headquarters</p>
+                        <p>1234 Culinary Lane, Suite 500</p>
+                        <p>San Francisco, CA 94107</p>
+                        <p>United States</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Email: info@yumwhirl.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 YumWhirl. All rights reserved. "Spin Up Something Tasty" is a trademark of YumWhirl.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

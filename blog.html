@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumWhirl Blog - Quick, Fun, Flavor-Packed Bites</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #6BBF59; /* Lime green */
+            --secondary: #3D9DB3; /* Cool blue */
+            --accent: #FF7E33; /* Vibrant orange */
+            --light: #F5F5F5;
+            --dark: #333333;
+            --rounded: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Blog Main Content */
+        .blog-header {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+        
+        .blog-title {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .blog-subtitle {
+            color: var(--accent);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: var(--rounded);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--accent);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-card-title {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+        
+        .blog-excerpt {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Featured Post */
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background-color: white;
+            border-radius: var(--rounded);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 50px 0;
+        }
+        
+        .featured-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .featured-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .featured-title {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .featured-excerpt {
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        /* Categories */
+        .categories {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--rounded);
+            margin: 60px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .category-card {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--rounded);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .category-icon {
+            font-size: 30px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .category-title {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .category-count {
+            color: var(--secondary);
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Yum<span>Whirl</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">YumWhirl Blog</h1>
+            <p class="blog-subtitle">Quick tips, meal prep hacks, and flavor-packed ideas for busy people who love good food</p>
+        </div>
+        
+        <!-- Featured Post -->
+        <div class="featured-post">
+            <img src="b1.webp" alt="Meal Prep Containers" class="featured-img">
+            <div class="featured-content">
+                <span class="featured-tag">Meal Prep</span>
+                <h2 class="featured-title">The Ultimate Guide to Meal Prep Without Getting Bored</h2>
+                <p class="featured-excerpt">Discover how to create 10 different meals from just 5 base ingredients. Our meal prep system keeps your lunches exciting all week long while saving you hours in the kitchen.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            <!-- Blog 1 -->
+            <div class="blog-card">
+                <img src="b2.avif" alt="Buddha Bowl" class="blog-img">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">5 Buddha Bowl Formulas That Never Get Old</h3>
+                    <div class="blog-meta">
+                        <span>June 15, 2023</span>
+                        <span>8 min read</span>
+                    </div>
+                    <p class="blog-excerpt">Learn the perfect ratios for creating satisfying Buddha bowls every time with whatever ingredients you have on hand.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 2 -->
+            <div class="blog-card">
+                <img src="b3.avif" alt="Smoothie Ingredients" class="blog-img">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Smoothie Hacks: How to Pack in 30g of Protein</h3>
+                    <div class="blog-meta">
+                        <span>June 8, 2023</span>
+                        <span>6 min read</span>
+                    </div>
+                    <p class="blog-excerpt">Discover surprising protein sources that will keep you full for hours without that chalky protein powder taste.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 3 -->
+            <div class="blog-card">
+                <img src="b4.webp" alt="Taco Ingredients" class="blog-img">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Global Fusion: Taco Night with a Healthy Twist</h3>
+                    <div class="blog-meta">
+                        <span>June 1, 2023</span>
+                        <span>10 min read</span>
+                    </div>
+                    <p class="blog-excerpt">How to combine Korean, Mexican, and Mediterranean flavors for taco night that's anything but basic.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 4 -->
+            <div class="blog-card">
+                <img src="b5.avif" alt="Chia Pudding" class="blog-img">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Overnight Breakfasts: Beyond Basic Oatmeal</h3>
+                    <div class="blog-meta">
+                        <span>May 25, 2023</span>
+                        <span>7 min read</span>
+                    </div>
+                    <p class="blog-excerpt">5 make-ahead breakfasts that actually keep you full until lunch (no more 10am snack attacks).</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 5 -->
+            <div class="blog-card">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">The Busy Person's Guide to Eating More Vegetables</h3>
+                    <div class="blog-meta">
+                        <span>May 18, 2023</span>
+                        <span>9 min read</span>
+                    </div>
+                    <p class="blog-excerpt">Sneaky ways to add more greens to every meal without spending hours chopping or cooking.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 6 -->
+            <div class="blog-card">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Protein-Packed Snacks That Actually Satisfy</h3>
+                    <div class="blog-meta">
+                        <span>May 11, 2023</span>
+                        <span>5 min read</span>
+                    </div>
+                    <p class="blog-excerpt">15 easy snack ideas with at least 10g of protein to power you through your busy day.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 7 -->
+            <div class="blog-card">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">How to Meal Prep Without Eating the Same Thing All Week</h3>
+                    <div class="blog-meta">
+                        <span>May 4, 2023</span>
+                        <span>12 min read</span>
+                    </div>
+                    <p class="blog-excerpt">The ingredient swap system that creates 5 different meals from one prep session.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 8 -->
+            <div class="blog-card">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">15-Minute Dinners for When You're Too Tired to Cook</h3>
+                    <div class="blog-meta">
+                        <span>April 27, 2023</span>
+                        <span>8 min read</span>
+                    </div>
+                    <p class="blog-excerpt">Real solutions for those nights when takeout seems like the only option.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 9 -->
+            <div class="blog-card">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">The Best Kitchen Tools for Quick, Healthy Meals</h3>
+                    <div class="blog-meta">
+                        <span>April 20, 2023</span>
+                        <span>10 min read</span>
+                    </div>
+                    <p class="blog-excerpt">Our tested picks that actually save time (not just counter space).</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Blog 10 -->
+            <div class="blog-card">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">How to Build a Balanced Plate in 5 Minutes</h3>
+                    <div class="blog-meta">
+                        <span>April 13, 2023</span>
+                        <span>6 min read</span>
+                    </div>
+                    <p class="blog-excerpt">The simple formula for meals that keep you energized without complicated macros.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Categories Section -->
+        <div class="categories">
+            <h2 class="section-title">Explore Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🥗</div>
+                    <h4 class="category-title">Meal Prep</h4>
+                    <p class="category-count">24 Articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💪</div>
+                    <h4 class="category-title">Gym Fuel</h4>
+                    <p class="category-count">18 Articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🌎</div>
+                    <h4 class="category-title">Global Flavors</h4>
+                    <p class="category-count">15 Articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⏱️</div>
+                    <h4 class="category-title">Quick Meals</h4>
+                    <p class="category-count">32 Articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍏</div>
+                    <h4 class="category-title">Healthy Swaps</h4>
+                    <p class="category-count">12 Articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍌</div>
+                    <h4 class="category-title">Smoothies</h4>
+                    <p class="category-count">9 Articles</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Quick Meals</a></li>
+                        <li><a href="#">Meal Prep</a></li>
+                        <li><a href="#">Gym Recipes</a></li>
+                        <li><a href="#">Vegetarian</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Recipe Guidelines</a></li>
+                        <li><a href="#">Nutrition Philosophy</a></li>
+                        <li><a href="#">Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 YumWhirl. All rights reserved. "Spin Up Something Tasty" is a trademark of YumWhirl.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

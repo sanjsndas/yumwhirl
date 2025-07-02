@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - YumWhirl</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #6BBF59; /* Lime green */
+            --secondary: #3D9DB3; /* Cool blue */
+            --accent: #FF7E33; /* Vibrant orange */
+            --light: #F5F5F5;
+            --dark: #333333;
+            --rounded: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Contact Main Content */
+        .contact-header {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .contact-title {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-subtitle {
+            color: var(--secondary);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Sections */
+        .contact-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .contact-form-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--rounded);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-title {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--rounded);
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            padding: 14px 20px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: var(--rounded);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .contact-info-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--rounded);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-title {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .contact-details h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .contact-details p {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--rounded);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+        
+        .faq-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 900px) {
+            .faq-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        
+        .faq-question {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin: 60px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: var(--rounded);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin: 0 auto 20px;
+        }
+        
+        .member-name {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .member-position {
+            color: var(--secondary);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .member-bio {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .member-contact {
+            color: var(--accent);
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .contact-sections {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Yum<span>Whirl</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="contact-header">
+            <h1 class="contact-title">Get in Touch With YumWhirl</h1>
+            <p class="contact-subtitle">We'd love to hear from you! Whether you have questions, feedback, or partnership inquiries, our team is here to help.</p>
+        </div>
+        
+        <div class="contact-sections">
+            <div class="contact-form-section">
+                <h2 class="form-title">Send Us a Message</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="recipe">Recipe Question</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="press">Press Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info-section">
+                <h2 class="info-title">Contact Information</h2>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Our Headquarters</h3>
+                        <p>
+                            YumWhirl Inc.<br>
+                            1234 Culinary Lane, Suite 500<br>
+                            San Francisco, CA 94107<br>
+                            United States
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Phone Numbers</h3>
+                        <p>
+                            Customer Support: +1 (555) 123-4567<br>
+                            Business Inquiries: +1 (555) 987-6543<br>
+                            Fax: +1 (555) 789-0123
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email Addresses</h3>
+                        <p>
+                            General: info@yumwhirl.com<br>
+                            Support: help@yumwhirl.com<br>
+                            Partnerships: biz@yumwhirl.com<br>
+                            Careers: jobs@yumwhirl.com
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">🕒</div>
+                    <div class="contact-details">
+                        <h3>Business Hours</h3>
+                        <p>
+                            Monday-Friday: 9:00 AM - 6:00 PM PST<br>
+                            Saturday: 10:00 AM - 4:00 PM PST<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-column">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">How can I submit my own recipe to YumWhirl?</h3>
+                        <p class="faq-answer">We love receiving recipe submissions from our community! You can submit your recipes through our online submission form on the "Contribute" page. Our editorial team reviews all submissions and may contact you for additional details. Please ensure your recipe is original and includes all necessary ingredients, measurements, and step-by-step instructions.</p>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">What's the best way to contact customer support?</h3>
+                        <p class="faq-answer">For fastest service, please use our contact form above or email help@yumwhirl.com. Include as many details as possible about your issue. Our average response time is 24-48 hours during business days. For urgent matters, you can call our support line at +1 (555) 123-4567 during business hours.</p>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do you offer nutrition information for all recipes?</h3>
+                        <p class="faq-answer">We provide nutritional estimates for most recipes on our platform. These calculations are based on standard ingredients and serving sizes. However, actual nutritional content may vary based on specific brands, preparation methods, and portion sizes. For precise dietary needs, we recommend consulting a nutritionist.</p>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Can I use YumWhirl recipes for my food blog or business?</h3>
+                        <p class="faq-answer">Our recipes are protected by copyright, but we encourage sharing with proper attribution. For personal blogs, you may adapt our recipes with credit and a link back to the original. For commercial use (including restaurants, meal kits, or packaged foods), please contact our partnerships team at biz@yumwhirl.com for licensing information.</p>
+                    </div>
+                    
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I report an error in a recipe?</h3>
+                        <p class="faq-answer">We appreciate help catching any errors in our recipes. Please email corrections@yumwhirl.com with the recipe title, specific error details, and (if possible) the correct information. Our culinary team will review and update the recipe as needed. You can also use the "Report Error" button on each recipe page.</p>
+                    </div>
+                    
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Are all YumWhirl recipes gluten-free/dairy-free/vegan?</h3>
+                        <p class="faq-answer">We offer a variety of recipes to accommodate different dietary needs, but not all recipes are allergen-free. Each recipe clearly labels dietary attributes (gluten-free, dairy-free, vegan, etc.) and often includes substitution suggestions. Use our advanced filters to find recipes matching your dietary requirements.</p>
+                    </div>
+                    
+                    <!-- FAQ 7 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">How often do you add new recipes to the site?</h3>
+                        <p class="faq-answer">Our culinary team publishes new recipes weekly, with seasonal collections added throughout the year. Subscribers to our newsletter receive first access to new recipes. We typically add 10-15 new recipes each week across various categories including quick meals, meal prep, and special diets.</p>
+                    </div>
+                    
+                    <!-- FAQ 8 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do you offer cooking classes or in-person events?</h3>
+                        <p class="faq-answer">Yes! We host virtual cooking classes monthly and occasional in-person events in major cities. Check our "Events" page for upcoming opportunities. We also partner with culinary schools and chefs for special workshops. Corporate team-building cooking events can be arranged by contacting events@yumwhirl.com.</p>
+                    </div>
+                    
+                    <!-- FAQ 9 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Can I request a specific type of recipe?</h3>
+                        <p class="faq-answer">Absolutely! We welcome recipe requests from our community. Use our "Recipe Request" form or email requests@yumwhirl.com with details about what you're looking for (ingredients, dietary needs, occasion, etc.). While we can't fulfill every request, popular suggestions often inspire future recipe development.</p>
+                    </div>
+                    
+                    <!-- FAQ 10 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I cancel my premium subscription?</h3>
+                        <p class="faq-answer">You can manage your subscription through your account settings. Navigate to "Billing" and follow the prompts to cancel. Cancellations take effect at the end of your current billing period. For assistance, contact billing@yumwhirl.com. We'd appreciate hearing any feedback about why you're canceling.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-column">
+                    <!-- FAQ 11 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">What's your policy on sponsored content?</h3>
+                        <p class="faq-answer">We occasionally partner with brands we trust to create sponsored recipes or content. All sponsored content is clearly labeled as such. We maintain full editorial control over recipe development and only promote products we genuinely recommend. For partnership inquiries, please contact partnerships@yumwhirl.com.</p>
+                    </div>
+                    
+                    <!-- FAQ 12 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">How accurate are the preparation time estimates?</h3>
+                        <p class="faq-answer">Our time estimates are based on testing by multiple home cooks of varying skill levels. Times include active preparation but assume basic kitchen equipment and familiarity with techniques. Your experience may vary based on skill, kitchen setup, and multitasking. We welcome feedback on time estimates.</p>
+                    </div>
+                    
+                    <!-- FAQ 13 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do you have an affiliate program?</h3>
+                        <p class="faq-answer">Yes, we have an affiliate program for qualified food bloggers, influencers, and content creators. Participants earn commission on qualifying sales generated through their unique links. Applications are reviewed based on content quality and audience alignment. Apply through our "Affiliates" page or email affiliates@yumwhirl.com.</p>
+                    </div>
+                    
+                    <!-- FAQ 14 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Why don't you list calorie counts for all recipes?</h3>
+                        <p class="faq-answer">While we provide nutritional information for most recipes, we intentionally don't emphasize calorie counts as we promote a balanced, non-diet approach to eating. Our nutrition data focuses on protein, fiber, and key nutrients. For specific calorie needs, we recommend consulting the detailed nutrition panel available on each recipe.</p>
+                    </div>
+                    
+                    <!-- FAQ 15 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">How can I advertise on YumWhirl?</h3>
+                        <p class="faq-answer">We offer several advertising opportunities for food-related brands. Our media kit with rates and audience demographics is available upon request. For display ads, sponsored content, or newsletter placements, please contact sales@yumwhirl.com. We carefully vet all advertisers to ensure alignment with our values.</p>
+                    </div>
+                    
+                    <!-- FAQ 16 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Are your recipes tested before publishing?</h3>
+                        <p class="faq-answer">Every YumWhirl recipe undergoes rigorous testing by our culinary team. Recipes are tested multiple times in home kitchens (not test kitchens) to ensure they work for real cooks. We evaluate for clarity, accuracy, and reliability. Our testers include cooks of varying skill levels to catch potential issues.</p>
+                    </div>
+                    
+                    <!-- FAQ 17 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Can I republish YumWhirl recipes in my cookbook?</h3>
+                        <p class="faq-answer">Republishing our recipes requires written permission. For personal projects (like family cookbooks), we typically grant permission with proper attribution. For commercial publications, licensing fees apply. Contact copyright@yumwhirl.com with details about your project, including which recipes you'd like to use and your planned distribution.</p>
+                    </div>
+                    
+                    <!-- FAQ 18 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do you offer services for meal planning?</h3>
+                        <p class="faq-answer">Our premium members have access to customizable meal plans with shopping lists. For personalized meal planning services (including specialized diets), we recommend our certified nutrition partners. Email mealplans@yumwhirl.com for recommendations based on your specific needs and budget.</p>
+                    </div>
+                    
+                    <!-- FAQ 19 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do you handle food safety concerns?</h3>
+                        <p class="faq-answer">Food safety is paramount in all our recipes. We follow USDA guidelines for safe cooking temperatures and handling. Recipes include necessary safety notes for raw ingredients. For specific concerns (allergies, immunocompromised individuals), we recommend consulting the recipe notes or contacting safety@yumwhirl.com for clarification.</p>
+                    </div>
+                    
+                    <!-- FAQ 20 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Can I interview someone from YumWhirl for my publication?</h3>
+                        <p class="faq-answer">We're happy to participate in media interviews with advance notice. Please send your request to press@yumwhirl.com including your publication, topic, deadline, and preferred interview format. Our PR team will connect you with the appropriate spokesperson. For urgent requests, please call +1 (555) 987-6543.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Information Section -->
+        <div class="faq-section">
+            <h2 class="section-title">More Ways to Connect</h2>
+            
+            <div class="faq-container">
+                <div class="faq-column">
+                    <!-- Point 21 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Career Opportunities at YumWhirl</h3>
+                        <p class="faq-answer">We're always looking for passionate food enthusiasts to join our team. Current openings are listed on our "Careers" page. To apply, email your resume and cover letter to jobs@yumwhirl.com. We also offer internship programs for culinary students and recent graduates. Follow us on LinkedIn for company updates and new position announcements.</p>
+                    </div>
+                    
+                    <!-- Point 22 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Press Inquiries and Media Kit</h3>
+                        <p class="faq-answer">Members of the press can request our media kit, high-resolution images, or schedule interviews through press@yumwhirl.com. Our media kit includes company background, audience demographics, executive bios, and logo assets. We're available for commentary on food trends, nutrition topics, and digital publishing in the food space.</p>
+                    </div>
+                    
+                    <!-- Point 23 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Speaking Engagements and Appearances</h3>
+                        <p class="faq-answer">Our culinary team and executives are available for speaking engagements, panel discussions, and television appearances. Requests should be sent to speaking@yumwhirl.com at least 8 weeks in advance. Please include event details, audience information, proposed topics, and any honorarium or travel requirements.</p>
+                    </div>
+                    
+                    <!-- Point 24 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Cookbook Publishing Inquiries</h3>
+                        <p class="faq-answer">For information about YumWhirl cookbooks or publishing partnerships, contact cookbooks@yumwhirl.com. We publish seasonal collections and themed cookbooks annually. Literary agents and publishers can submit proposals for collaborative projects. Self-published authors may inquire about distribution opportunities.</p>
+                    </div>
+                    
+                    <!-- Point 25 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Charitable Donations and Sponsorships</h3>
+                        <p class="faq-answer">YumWhirl supports food-related charities and community programs. Requests for donations or sponsorships should be submitted at least 60 days before your event via donations@yumwhirl.com. Please include your organization's mission, event details, and how the donation will be used. We prioritize programs addressing food insecurity and culinary education.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-column">
+                    <!-- Point 26 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Product Review Consideration</h3>
+                        <p class="faq-answer">We welcome samples of kitchen tools, ingredients, and food products for potential review. Send product information to reviews@yumwhirl.com before shipping. Note that we receive many submissions and cannot guarantee coverage. Featured products are selected based on quality, innovation, and relevance to our audience.</p>
+                    </div>
+                    
+                    <!-- Point 27 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Content Licensing for Businesses</h3>
+                        <p class="faq-answer">Restaurants, meal kit services, and other food businesses can license YumWhirl recipes for commercial use. Licensing fees vary based on usage type and volume. Contact licensing@yumwhirl.com with details about your intended use. We offer customized recipe development services for businesses needing unique content.</p>
+                    </div>
+                    
+                    <!-- Point 28 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Website Accessibility Feedback</h3>
+                        <p class="faq-answer">We strive to make YumWhirl accessible to all users. To report accessibility issues or suggest improvements, email accessibility@yumwhirl.com. Our team reviews all feedback and prioritizes enhancements. For immediate assistance, call our accessibility hotline at +1 (555) 234-5678 during business hours.</p>
+                    </div>
+                    
+                    <!-- Point 29 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">International Partnerships</h3>
+                        <p class="faq-answer">For inquiries about international editions, translations, or regional partnerships, contact international@yumwhirl.com. We're currently expanding our global presence and seeking partners in key markets. Include information about your region, audience, and proposed collaboration in your inquiry.</p>
+                    </div>
+                    
+                    <!-- Point 30 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Investor Relations</h3>
+                        <p class="faq-answer">Investors and analysts can access our investor relations materials through investors@yumwhirl.com. We hold quarterly update calls and welcome meetings with qualified investors. For private equity or acquisition inquiries, please contact our CFO directly at cfo@yumwhirl.com with detailed information about your proposal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2 class="section-title">Meet Our Leadership Team</h2>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <h3 class="member-name">Jamie Chen</h3>
+                    <p class="member-position">Founder & CEO</p>
+                    <p class="member-bio">Nutritionist turned entrepreneur, Jamie founded YumWhirl to make healthy eating accessible and fun.</p>
+                    <p class="member-contact">jamie@yumwhirl.com</p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <h3 class="member-name">Marcus Rivera</h3>
+                    <p class="member-position">Head Chef</p>
+                    <p class="member-bio">Former restaurant chef specializing in global fusion cuisine and quick, flavorful meals.</p>
+                    <p class="member-contact">marcus@yumwhirl.com</p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <h3 class="member-name">Priya Patel</h3>
+                    <p class="member-position">Director of Content</p>
+                    <p class="member-bio">Food journalist and editor ensuring our recipes are clear, accurate, and inspiring.</p>
+                    <p class="member-contact">priya@yumwhirl.com</p>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <h3 class="member-name">David Kim</h3>
+                    <p class="member-position">Tech Lead</p>
+                    <p class="member-bio">Builds the platforms that make YumWhirl recipes accessible everywhere.</p>
+                    <p class="member-contact">david@yumwhirl.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Contact Points Section -->
+        <div class="faq-section">
+            <h2 class="section-title">Specialized Contact Channels</h2>
+            
+            <div class="faq-container">
+                <div class="faq-column">
+                    <!-- Point 31 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Recipe Development Services</h3>
+                        <p class="faq-answer">Our culinary team offers custom recipe development for brands, publications, and special projects. Email recipes@yumwhirl.com with your concept, timeline, and budget. Services include tailored recipes, photography, and nutritional analysis. We specialize in dietary-specific creations and large-scale recipe testing.</p>
+                    </div>
+                    
+                    <!-- Point 32 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Food Photography Inquiries</h3>
+                        <p class="faq-answer">To license our food photography or commission original shoots, contact photos@yumwhirl.com. Our media library includes thousands of high-resolution images. We also offer photography services for cookbooks, packaging, and advertising. Specify your needs for style, resolution, and usage rights.</p>
+                    </div>
+                    
+                    <!-- Point 33 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Academic Research Partnerships</h3>
+                        <p class="faq-answer">Universities and researchers can partner with us for nutrition studies and culinary research. Email research@yumwhirl.com with your proposal. We've collaborated on projects about eating habits, recipe comprehension, and the psychology of food choices. Student researchers should include faculty advisor information.</p>
+                    </div>
+                    
+                    <!-- Point 34 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Bulk Membership Purchases</h3>
+                        <p class="faq-answer">Organizations can purchase YumWhirl Premium memberships in bulk for employees or members. Discounts apply for large orders. Contact groups@yumwhirl.com for pricing and setup. We offer customized onboarding and reporting for corporate wellness programs and educational institutions.</p>
+                    </div>
+                    
+                    <!-- Point 35 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">API and Data Licensing</h3>
+                        <p class="faq-answer">Developers can access our recipe database through our API. For documentation and pricing, email api@yumwhirl.com. We also license datasets for machine learning and culinary research. All API use requires approval and proper attribution according to our developer terms.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-column">
+                    <!-- Point 36 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Physical Mail Correspondence</h3>
+                        <p class="faq-answer">While we prefer digital communication, you may send physical mail to: YumWhirl Inc., Attn: Correspondence, 1234 Culinary Lane, Suite 500, San Francisco, CA 94107. Please allow 4-6 weeks for response. Include your email address for faster reply. We cannot return submitted materials.</p>
+                    </div>
+                    
+                    <!-- Point 37 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Community Ambassador Program</h3>
+                        <p class="faq-answer">Passionate home cooks can join our ambassador program to represent YumWhirl locally. Ambassadors host events, create content, and provide user feedback. Apply at ambassadors@yumwhirl.com. The program offers exclusive perks, early access to features, and networking opportunities.</p>
+                    </div>
+                    
+                    <!-- Point 38 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Crisis Communication</h3>
+                        <p class="faq-answer">For urgent matters requiring immediate attention (security issues, legal concerns, or PR crises), call our 24/7 crisis line at +1 (555) 789-0123. This line is monitored continuously for genuine emergencies. For non-urgent matters, please use standard contact channels to ensure proper routing.</p>
+                    </div>
+                    
+                    <!-- Point 39 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Facility Tours</h3>
+                        <p class="faq-answer">Our test kitchen and offices are available for scheduled tours by students, industry professionals, and media. Requests must be submitted at least 3 weeks in advance to tours@yumwhirl.com. Tours include demonstrations and Q&A sessions. Note that some areas may be restricted for safety reasons.</p>
+                    </div>
+                    
+                    <!-- Point 40 -->
+                    <div class="faq-item">
+                        <h3 class="faq-question">Wholesale Inquiries</h3>
+                        <p class="faq-answer">Retailers interested in carrying YumWhirl products (spice blends, cookbooks, etc.) should contact wholesale@yumwhirl.com. Include your business license, tax ID, and order volume requirements. We work with specialty food stores, bookshops, and online retailers meeting our brand standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Quick Meals</a></li>
+                        <li><a href="#">Meal Prep</a></li>
+                        <li><a href="#">Gym Recipes</a></li>
+                        <li><a href="#">Vegetarian</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Recipe Guidelines</a></li>
+                        <li><a href="#">Nutrition Philosophy</a></li>
+                        <li><a href="#">Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p>YumWhirl Headquarters</p>
+                        <p>1234 Culinary Lane, Suite 500</p>
+                        <p>San Francisco, CA 94107</p>
+                        <p>United States</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Email: info@yumwhirl.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 YumWhirl. All rights reserved. "Spin Up Something Tasty" is a trademark of YumWhirl.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

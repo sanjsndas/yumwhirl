@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - YumWhirl</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #6BBF59; /* Lime green */
+            --secondary: #3D9DB3; /* Cool blue */
+            --accent: #FF7E33; /* Vibrant orange */
+            --light: #F5F5F5;
+            --dark: #333333;
+            --rounded: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Cookies Policy Content */
+        .cookies-header {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .cookies-title {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .last-updated {
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .cookies-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--rounded);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .policy-point {
+            margin-bottom: 30px;
+        }
+        
+        .point-title {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.9);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .cookie-btn {
+            padding: 10px 20px;
+            border-radius: var(--rounded);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .accept-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .decline-btn {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .settings-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+        }
+        
+        .cookie-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px 10px;
+            }
+            
+            .cookies-content {
+                padding: 30px 20px;
+            }
+            
+            .cookie-consent {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-text {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Yum<span>Whirl</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="cookies-header">
+            <h1 class="cookies-title">Cookie Policy</h1>
+            <p class="last-updated">Last Updated: June 15, 2023</p>
+        </div>
+        
+        <div class="cookies-content">
+            <div class="policy-section">
+                <h2 class="section-title">Introduction</h2>
+                <p>This Cookie Policy explains how YumWhirl ("we", "us", or "our") uses cookies and similar tracking technologies when you visit our website. By using our website, you consent to the use of cookies in accordance with this policy. Cookies are small data files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the website owners.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2 class="section-title">Types of Cookies We Use</h2>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">1. Strictly Necessary Cookies</h3>
+                    <p>These cookies are essential for you to browse the website and use its features, such as accessing secure areas of the site. Without these cookies, services like shopping baskets or e-billing cannot be provided. They are usually set in response to actions made by you such as setting your privacy preferences, logging in, or filling in forms. These cookies do not store any personally identifiable information and cannot be disabled in our systems.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">2. Performance Cookies</h3>
+                    <p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site and will not be able to monitor its performance and make improvements.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">3. Functional Cookies</h3>
+                    <p>These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly. These cookies remember choices you make (such as your username, language, or region) to provide enhanced, more personal features and to save you time by eliminating the need to re-enter preferences.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">4. Targeting Cookies</h3>
+                    <p>These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant advertisements on other sites. They do not store direct personal information but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising. These cookies track visitors across websites to display ads that are more relevant and engaging for users.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">5. Social Media Cookies</h3>
+                    <p>These cookies are set by a range of social media services that we have added to the site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit. If you do not allow these cookies you may not be able to use or see these sharing tools.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">6. First-Party Cookies</h3>
+                    <p>First-party cookies are set by the website you are visiting, and they can only be read by that site. We use first-party cookies for various functions including session management, authentication, and preference storage. These cookies are generally considered to be more secure and less invasive than third-party cookies as they are directly controlled by us and not shared with external domains.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">7. Third-Party Cookies</h3>
+                    <p>Third-party cookies are set by domains other than the one you are visiting, typically by advertisers and analytics companies. These cookies are used for cross-site tracking, retargeting, and ad-serving purposes. We carefully vet all third-party services that set cookies through our site to ensure they comply with privacy regulations and our own standards for data protection.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">8. Session Cookies</h3>
+                    <p>Session cookies are temporary cookies that remain on your device until you leave the website. These are essential for proper functioning of our website, particularly for maintaining your session and ensuring security during your visit. They enable features like maintaining your logged-in status as you navigate between pages. Session cookies are automatically deleted when you close your browser.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">9. Persistent Cookies</h3>
+                    <p>Persistent cookies remain on your device for a set period specified in the cookie (usually between a few days to several years) unless you delete them manually. We use persistent cookies to remember your preferences and settings for future visits, analyze long-term user behavior patterns, and provide personalized content. The lifespan of each persistent cookie varies depending on its purpose.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">10. Flash Cookies</h3>
+                    <p>Flash cookies (also known as Local Shared Objects) are data files similar to cookies that are used by Adobe Flash Player. They can store more complex data than regular cookies and are not managed through your browser settings. We may use Flash cookies to remember settings, preferences, and usage for media content. These can be managed through the Adobe Flash Player Settings Manager.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2 class="section-title">Purposes of Cookie Usage</h2>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">11. Website Functionality</h3>
+                    <p>We use cookies to enable basic functions like page navigation and access to secure areas of the website. These cookies are essential for the website to function properly and cannot be switched off in our systems. They include features such as maintaining your logged-in status, remembering items in your shopping cart, and ensuring secure checkout processes. Without these cookies, core functionality of our site would be impaired or non-functional.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">12. Performance Monitoring</h3>
+                    <p>Cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This includes tracking which pages are most frequently visited, how users navigate between sections, and identifying any technical issues. Performance cookies provide metrics that help us optimize site architecture, improve content delivery, and enhance overall user experience without collecting personally identifiable information.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">13. Personalization</h3>
+                    <p>We use cookies to remember information about your preferences and customize your experience accordingly. This includes language settings, dietary preferences you've indicated, recently viewed recipes, and layout choices. Personalization cookies enable features like recommending recipes based on your browsing history and maintaining your preferred viewing settings across visits to create a more tailored experience.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">14. Advertising</h3>
+                    <p>Cookies help us deliver relevant advertisements to you and measure the effectiveness of our advertising campaigns. They track whether you've seen an ad, how you interacted with it, and prevent you from seeing the same ad too many times. Advertising cookies also enable us to show you personalized content recommendations and special offers based on your browsing behavior both on and off our site.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">15. Social Media Integration</h3>
+                    <p>Cookies enable you to share content directly to social media platforms and allow social media services to recognize you when you view social media content on our website. These cookies may track your browser across other sites to build a profile of your interests. Social media cookies make it possible to like or share content, follow our social media accounts directly from our site, and display personalized feeds of our social content.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">16. Security</h3>
+                    <p>We use security cookies to authenticate users, prevent fraudulent use of login credentials, and protect user data from unauthorized access. These cookies help identify and mitigate potential security risks by detecting unusual patterns or multiple failed login attempts. Security cookies are essential for protecting your account and ensuring that no one else can access your personal information without authorization.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">17. A/B Testing</h3>
+                    <p>Cookies allow us to test different versions of our website to determine which design and content performs best. A/B testing cookies ensure you consistently see the same version of a page during your session and help us collect data about user engagement with different layouts. This information helps us make data-driven decisions about site improvements while maintaining a consistent experience for individual users.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">18. Affiliate Tracking</h3>
+                    <p>We use cookies to track referrals from affiliate partners and properly credit them for any resulting subscriptions or purchases. These cookies record which affiliate referred you to our site and may track your journey through the site to determine if you complete a qualifying action. Affiliate cookies help ensure our partners are fairly compensated while maintaining transparency about the referral process.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">19. Location-Based Services</h3>
+                    <p>With your permission, cookies can help us provide location-specific content such as regional recipes, local ingredient availability, and time-appropriate meal suggestions. Location cookies may determine your approximate position based on IP address or more precise location if you enable GPS features. This allows us to customize content based on your geographic location, climate, and local culinary traditions.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">20. Analytics Integration</h3>
+                    <p>We use cookies to integrate with third-party analytics services that help us understand how our website is used. These services collect information such as how often users visit the site, what pages they visit, and what other sites they used prior to coming to our site. Analytics cookies provide aggregated data that helps us improve our content strategy and technical performance without identifying individual visitors.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2 class="section-title">Cookie Management</h2>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">21. Browser Cookie Controls</h3>
+                    <p>Most web browsers allow you to control cookies through their settings preferences. You can set your browser to refuse all or some cookies, or to alert you when websites set or access cookies. However, if you disable or refuse cookies, please note that some parts of our website may become inaccessible or not function properly. Each browser is different, so check the "Help" menu of your browser to learn how to modify your cookie settings.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">22. Cookie Consent Tool</h3>
+                    <p>We provide a cookie consent management tool that allows you to customize your cookie preferences. This tool appears when you first visit our site and can be accessed at any time through a link in the footer. Through this interface, you can enable or disable different categories of cookies (except strictly necessary ones) and see detailed information about each cookie we use.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">23. Opting Out of Advertising Cookies</h3>
+                    <p>You can opt out of targeted advertising by visiting the Digital Advertising Alliance's opt-out portal or the Network Advertising Initiative's opt-out tool. These industry-developed programs allow you to reject targeting cookies from many major ad networks. Note that opting out doesn't mean you won't see ads - it means the ads you see may be less relevant to your interests.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">24. Do Not Track Signals</h3>
+                    <p>Some browsers incorporate a "Do Not Track" (DNT) feature that signals to websites you visit that you do not want to have your online activity tracked. Currently, our systems do not recognize browser "Do Not Track" signals as there is no industry standard for implementation. However, we provide you with alternative control options through our cookie consent tool and privacy settings.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">25. Mobile Device Controls</h3>
+                    <p>On mobile devices, you may have additional controls over cookies through your device settings. Both iOS and Android provide options to limit ad tracking and reset advertising identifiers. These controls vary by device manufacturer and operating system version. Consult your device documentation for specific instructions on managing cookies and tracking technologies in mobile browsers and apps.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">26. Flash Cookie Management</h3>
+                    <p>Flash cookies are managed differently than regular browser cookies through the Adobe Flash Player Settings Manager. This manager allows you to control which websites can store information on your computer, delete specific Flash cookies, or prevent Flash content from storing data altogether. The Settings Manager is available on Adobe's website and must be accessed separately from your browser settings.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">27. Periodic Cookie Review</h3>
+                    <p>We recommend periodically reviewing and cleaning the cookies stored on your devices. Most browsers allow you to see all cookies currently stored and selectively delete them. Regular cookie maintenance helps protect your privacy and can improve browser performance. Instructions for accessing cookie storage vary by browser but are typically found in privacy or history settings.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">28. Third-Party Opt-Outs</h3>
+                    <p>Many third-party services we use offer their own opt-out mechanisms for their tracking technologies. For example, Google Analytics provides a browser add-on to opt out of their analytics tracking. We maintain a list of these third-party opt-out options in our privacy center. These opt-outs are specific to each provider and may require separate actions beyond our cookie consent tool.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">29. Cookie Expiration</h3>
+                    <p>Different cookies have different lifespans. Session cookies expire when you close your browser, while persistent cookies remain for a set period (from days to years). You can see the expiration date of each cookie in your browser's cookie storage. We regularly review and update cookie expiration periods to balance functionality needs with privacy considerations.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">30. Impact of Disabling Cookies</h3>
+                    <p>Disabling cookies may affect your ability to use certain features of our website. Essential functions like logging in, adding items to your cart, and making purchases may not work without strictly necessary cookies. Disabling performance cookies means we won't be able to gather information to improve user experience. Personalization features and saved preferences will also be unavailable without functional cookies.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2 class="section-title">Additional Information</h2>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">31. Cookie Policy Updates</h3>
+                    <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. When we make changes, we will revise the "Last Updated" date at the top of this policy. We encourage you to periodically review this page for the latest information on our cookie practices. Significant changes will be communicated through prominent notices on our website.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">32. Legal Compliance</h3>
+                    <p>Our cookie practices comply with applicable data protection laws including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). We provide clear information about cookie usage, obtain consent where required, and offer granular control options. Our data processing agreements with third-party cookie providers ensure they meet the same compliance standards we adhere to.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">33. Children's Privacy</h3>
+                    <p>We do not knowingly use cookies to collect personal information from children under 13 without parental consent. Our website is not directed to children, and we take special precautions regarding cookies for any child-directed sections. Parents can contact us to review any information collected from their child and request deletion of such information and associated cookies.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">34. International Data Transfers</h3>
+                    <p>Some third-party cookie providers may process data outside your country of residence. When this occurs, we implement appropriate safeguards as required by applicable laws. For transfers from the European Economic Area, we ensure providers participate in the EU-U.S. Privacy Shield Framework or implement Standard Contractual Clauses to provide adequate protection for transferred data.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">35. Data Security Measures</h3>
+                    <p>We implement appropriate technical and organizational measures to protect cookie data against unauthorized access, alteration, or destruction. This includes encryption of sensitive data, regular security assessments of our systems, and limiting access to cookie data to authorized personnel only. Our security practices are regularly reviewed and updated to address emerging threats.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">36. Cookie Audits</h3>
+                    <p>We conduct regular audits of the cookies used on our website to ensure they remain necessary for their stated purposes. These audits review cookie functionality, lifespan, data collection practices, and third-party access. Based on audit findings, we may remove unnecessary cookies, update cookie settings, or change service providers to better protect user privacy.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">37. Data Retention Periods</h3>
+                    <p>Cookie data is retained only as long as necessary to fulfill the purposes outlined in this policy unless a longer retention period is required by law. Retention periods vary by cookie type and purpose. Analytics data may be kept for up to 26 months, while advertising cookies typically have shorter lifespans. Personal data collected through cookies is subject to our Privacy Policy retention schedules.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">38. Cookie Lists</h3>
+                    <p>We maintain comprehensive lists of all cookies used on our website, including their purpose, duration, and whether they are first-party or third-party cookies. These lists are available through our cookie consent tool and are regularly updated as we add or remove cookies. The lists provide transparency about exactly what tracking technologies are active when you use our site.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">39. Contact Information</h3>
+                    <p>If you have questions about our use of cookies or this policy, please contact our Data Protection Officer at privacy@yumwhirl.com or at our postal address. For technical questions about managing cookies on your devices, you may contact our support team at help@yumwhirl.com. We aim to respond to all cookie-related inquiries within 5 business days.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3 class="point-title">40. Related Policies</h3>
+                    <p>This Cookie Policy should be read in conjunction with our Privacy Policy and Terms of Service, which provide additional information about how we collect, use, and protect personal data. Our Privacy Policy explains your rights regarding personal information collected through cookies, while our Terms of Service govern your use of our website and services.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Quick Meals</a></li>
+                        <li><a href="#">Meal Prep</a></li>
+                        <li><a href="#">Gym Recipes</a></li>
+                        <li><a href="#">Vegetarian</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Recipe Guidelines</a></li>
+                        <li><a href="#">Nutrition Philosophy</a></li>
+                        <li><a href="#">Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p>YumWhirl Headquarters</p>
+                        <p>1234 Culinary Lane, Suite 500</p>
+                        <p>San Francisco, CA 94107</p>
+                        <p>United States</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Email: info@yumwhirl.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 YumWhirl. All rights reserved. "Spin Up Something Tasty" is a trademark of YumWhirl.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Dialog -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-text">
+            <p>We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. You can manage your preferences in Cookie Settings.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn accept-btn" id="acceptCookies">Accept All</button>
+            <button class="cookie-btn decline-btn" id="declineCookies">Decline</button>
+            <button class="cookie-btn settings-btn" id="cookieSettings">Cookie Settings</button>
+        </div>
+    </div>
+
+    <script>
+        // Simple cookie consent handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptCookies = document.getElementById('acceptCookies');
+            const declineCookies = document.getElementById('declineCookies');
+            const cookieSettings = document.getElementById('cookieSettings');
+            
+            // Check if consent has already been given
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieConsent.style.display = 'flex';
+            }
+            
+            // Handle accept button
+            acceptCookies.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.style.display = 'none';
+                // Here you would typically set all cookies
+            });
+            
+            // Handle decline button
+            declineCookies.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieConsent.style.display = 'none';
+                // Here you would typically only set strictly necessary cookies
+            });
+            
+            // Handle settings button
+            cookieSettings.addEventListener('click', function() {
+                // In a real implementation, this would open a more detailed preferences dialog
+                alert('Cookie settings would open here in a full implementation. Currently only Accept All and Decline options are functional.');
+            });
+        });
+    </script>
+</body>
+</html>
